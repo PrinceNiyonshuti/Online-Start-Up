@@ -73,7 +73,7 @@ include "../../config/connection.php";
     $f_names=$_POST['f_names'];
     $username=$_POST['username'];
     $email=$_POST['email'];
-    $cat=$_POST['cat'];
+    $d_name=$_POST['f_names'];
     $phone=$_POST['phone'];
     $password=$_POST['password'];
 
@@ -90,8 +90,8 @@ if($query->num_rows == 1){
 <?php
     }else{
 
-            $sql="INSERT INTO account( `username`,`password`, `full_names`, `category`, `email`, `phone`)
-                    VALUE('$username','$password','$f_names','$cat','$email','$phone')";
+            $sql="INSERT INTO account( `username`,`password`, `full_names`, `display_name`, `email`, `phone`)
+                    VALUE('$username','$password','$f_names','$d_name','$email','$phone')";
 
 
                     if ($conn->query($sql)==TRUE) {

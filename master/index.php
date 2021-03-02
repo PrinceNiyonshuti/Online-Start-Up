@@ -13,7 +13,7 @@ if(isset($_GET["sign"]))
     $sign=$_GET["sign"];
     if($sign=="out")
     {
-        unset($_SESSION["admin_data_2019"]);
+        unset($_SESSION["admin_data_2020"]);
         
         header("location:../login.php");}
     }
@@ -21,25 +21,25 @@ if(isset($_GET["sign"]))
 
 // For checking if the user logged in
 
-if(isset($_SESSION['admin_data_2019']) == false){
+if(isset($_SESSION['admin_data_2020']) == false){
     header("Location:../login.php");
 }else{
     ?>
 
 
-                                <?php
+    <?php
 
-                                $sql5="SELECT * from admin where username='$_SESSION[admin_data_2019]'";
-                                $result5=$conn->query($sql5);
+        $sql5="SELECT * from admin where username='$_SESSION[admin_data_2020]'";
+        $result5=$conn->query($sql5);
 
 
-                                while ($row5 = $result5->fetch_assoc()) {
-                                $admin_det=$row5['Admin_id'];
-                                $username=$row5['username'];
+        while ($row5 = $result5->fetch_assoc()) {
+        $admin_det=$row5['id'];
+        $username=$row5['username'];
 
-                                }
+        }
 
-                                ?>
+    ?>
 
 <html lang="en">
 
@@ -52,7 +52,7 @@ if(isset($_SESSION['admin_data_2019']) == false){
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Ahisha Driving Vacation</title>
+    <title>Online-Start-Up</title>
     <link rel="icon" href="../img/icon.jpg" type="image/gif" sizes="16x16">
 
     <!-- Fontfaces CSS-->
@@ -86,7 +86,7 @@ if(isset($_SESSION['admin_data_2019']) == false){
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.php">
-                            <img src="../assets/images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="../img/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -130,7 +130,7 @@ if(isset($_SESSION['admin_data_2019']) == false){
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="index.php">
-                    <img src="../assets/images/icon/logo.png" alt="Cool Admin" />
+                    <img src="../img/logo.png" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -141,20 +141,16 @@ if(isset($_SESSION['admin_data_2019']) == false){
                                 <i class="fas fa-tachometer-alt"></i>My Panel</a>
                         </li>
                         <li>
-                            <a href="index.php?staff">
-                                <i class="fas fa-user"></i>Staff Details</a>
+                            <a href="index.php?start_up">
+                                <i class="fas fa-user"></i>Startup Details</a>
                         </li>
                         <li>
-                            <a href="index.php?course">
-                                <i class="fas fa-file-text"></i>Courses</a>
+                            <a href="index.php?projects">
+                                <i class="fas fa-file-text"></i>Projects</a>
                         </li>
                         <li>
-                            <a href="index.php?new_course">
-                                <i class="fas fa-file"></i>Chapter Content</a>
-                        </li>
-                        <li>
-                            <a href="index.php?students">
-                                <i class="fas fa-users"></i>School Students</a>
+                            <a href="index.php?meet_request">
+                                <i class="fas fa-file"></i>Meet Request</a>
                         </li>
                     </ul>
                 </nav>
@@ -170,10 +166,10 @@ if(isset($_SESSION['admin_data_2019']) == false){
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="index.php?search" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="valueToSearch" placeholder="Search for Students . . ." />
+                                <!-- <input class="au-input au-input--xl" type="text" name="valueToSearch" placeholder="Search for Students . . ." />
                                 <button class="au-btn--submit" name="search" type="submit">
                                     <i class="zmdi zmdi-search"></i>
-                                </button>
+                                </button> -->
                             </form>
                             <div class="header-button">
                                 <div class="noti-wrap">
@@ -264,29 +260,22 @@ if(isset($_SESSION['admin_data_2019']) == false){
             include("home.php");
         }
 
-         elseif(isset($_GET['staff']))
+        elseif(isset($_GET['start_up']))
         {           
-            include("new_staff.php");
-        }
-        elseif(isset($_GET['course']))
-        {           
-            include("course.php");
-        }
-         elseif(isset($_GET['students']))
-        {           
-            include("students.php");
+            include("start_up.php");
         }
 
-         elseif(isset($_GET['search']))
+        elseif(isset($_GET['projects']))
         {           
-            include("search_data.php");
+            include("projects.php");
         }
-        elseif(isset($_GET['new_course']))
+
+        elseif(isset($_GET['meet_request']))
         {           
-            include("new_course.php");
+            include("meet_request.php");
         }
         
-         else
+        else
         {
             include("home.php");
         }

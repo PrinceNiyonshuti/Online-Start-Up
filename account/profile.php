@@ -30,12 +30,16 @@
                                                             }
                                                             
                                                         ?>
-                                                        <img class="align-self-center  mr-3" src="start_up_profile_data/<?php echo $fileName ?>" alt="<?php echo $username ?>" >
+                                                        <img class="align-self-center  mr-3" style="height:250px;width:400p;" src="start_up_profile_data/<?php echo $fileName ?>" alt="<?php echo $username ?>" >
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-8">
+                                                <div class="col-lg-8" style="padding-top:15px;">
                                                     <div class="input-group">
-                                                        <p><strong>Username</strong>: <?php echo $username ?></p>
+                                                        <p><strong>Username</strong>: <?php echo $play_name ?></p>
+                                                    </div>
+
+                                                    <div class="input-group">
+                                                        <p><strong>Full Names</strong>: <?php echo $full_names ?></p>
                                                     </div>
 
                                                     <div class="input-group">

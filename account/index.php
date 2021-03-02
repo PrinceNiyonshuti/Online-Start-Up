@@ -27,23 +27,25 @@ if(isset($_SESSION['start_up_data_2020']) == false){
     ?>
 
 
-                                <?php
+        <?php
 
-                                $sql5="SELECT * from account where username='$_SESSION[start_up_data_2020]'";
-                                $result5=$conn->query($sql5);
+        $sql5="SELECT * from account where username='$_SESSION[start_up_data_2020]'";
+        $result5=$conn->query($sql5);
 
 
-                                while ($row5 = $result5->fetch_assoc()) {
-                                $account_id=$row5['id'];
-                                $username=$row5['username'];
-                                $email=$row5['email'];
-                                $tel=$row5['phone'];
-                                $pass_code=$row5['password'];
-                                $profile_pic=$row5['profile'];
+        while ($row5 = $result5->fetch_assoc()) {
+        $account_id=$row5['id'];
+        $username=$row5['username'];
+        $play_name=$row5['display_name'];
+        $full_names=$row5['full_names'];
+        $email=$row5['email'];
+        $tel=$row5['phone'];
+        $pass_code=$row5['password'];
+        $profile_pic=$row5['profile'];
 
-                                }
+        }
 
-                                ?>
+        ?>
 
 <html lang="en">
 
@@ -92,7 +94,7 @@ if(isset($_SESSION['start_up_data_2020']) == false){
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.php">
-                            <img src="../img/core-img/logo.png" alt="">
+                            <img src="../img/logo.png" alt="">
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -135,7 +137,7 @@ if(isset($_SESSION['start_up_data_2020']) == false){
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="index.php">
-                    <img src="img/logo.png" alt="">
+                    <img src="../img/logo.png" alt="">
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -150,16 +152,9 @@ if(isset($_SESSION['start_up_data_2020']) == false){
                                 <i class="fas fa-file-text"></i>Project</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.php?">New</a>
-                                </li>
-                                <li>
-                                    <a href="index.php?">Manage</a>
+                                    <a href="index.php?new">Project</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <a href="index.php?">
-                                <i class="fas fa-comment"></i>Comments</a>
                         </li>
                     </ul>
                 </nav>
@@ -326,9 +321,9 @@ if(isset($_SESSION['start_up_data_2020']) == false){
             include("update_profile.php");
         }
 
-        elseif(isset($_GET['']))
+        elseif(isset($_GET['new']))
         {           
-            include("");
+            include("new_startup.php");
         }
 
         elseif(isset($_GET['']))

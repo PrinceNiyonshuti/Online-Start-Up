@@ -67,15 +67,7 @@ include "config/connection.php";
                                     <label>E-mail</label>
                                     <input class="au-input au-input--full" type="email" id="email" name="email" placeholder="Your E-mail" required autofocus >
                                 </div>
-
-                                <div class="form-group">
-                                    <label>Category</label>
-                                        <select  id="cat" id="cat" class="form-control">
-                                            <option value="">Please Select category </option>
-                                            <option value="startup">Start Up</option>
-                                            <option value="investor">Investor</option>
-                                        </select>
-                                </div>
+                                
                                 <div class="form-group">
                                     <label>Phone </label>
                                     <input class="au-input au-input--full" id="phone" name="phone" placeholder="Fill your Phone" required autofocus>

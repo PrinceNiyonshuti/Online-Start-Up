@@ -11,7 +11,7 @@
                                     <div class="card">
                                     <div class="card-body">
                                         <div class="card-title">
-                                            <h3 class="text-center title-2"><b><?php echo $username ?></b> Update your profile</h3>
+                                            <h3 class="text-center title-2"><b><?php echo $play_name ?></b> Update your profile</h3>
                                         </div>
                                         <div id="profile_complete_message">
                                         </div>
@@ -39,9 +39,9 @@
                                                 </div>
                                                 <div class="col-lg-8">
 
-                                                    <label for="x_card_code" class="control-label mb-1">Username</label>
+                                                    <label for="x_card_code" class="control-label mb-1">Display Name</label>
                                                     <div class="input-group">
-                                                        <input id="username" name="username" type="text" class="form-control cc-cvc" value="<?php echo $username ?>" data-val="true">
+                                                        <input id="username" name="username" type="text" class="form-control cc-cvc" value="<?php echo $play_name ?>" data-val="true">
                                                     </div>
 
                                                     <label for="x_card_code" class="control-label mb-1">E-mail</label>

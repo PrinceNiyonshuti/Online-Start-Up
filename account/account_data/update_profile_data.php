@@ -52,7 +52,7 @@
     $username = $_POST['username'];
     
 
-if(empty($_FILES['profile']['name'])||empty($tel)||empty($username)||empty($agent_id)) {
+if(empty($tel)||empty($username)||empty($agent_id)) {
 
     ?>
         <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
@@ -67,50 +67,88 @@ if(empty($_FILES['profile']['name'])||empty($tel)||empty($username)||empty($agen
 else
 {
 
-    
-    $profile=$_FILES['profile'];
-    $file_name = $_FILES['profile']['name'];    
-    $file_location = $_FILES['profile']['tmp_name'];
-    $new_file_name = "$file_name";
-
-
-    if(move_uploaded_file($file_location, "../start_up_profile_data/" . $new_file_name)){
-                        
-        $sql="UPDATE account set username='$username',email='$email',phone='$tel',password='$password',profile='$new_file_name' where id='$agent_id'";
-
-                if ($conn->query($sql)===TRUE) 
-                {
-                    ?>
-                    <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-                        <span class="badge badge-pill badge-success">Done</span> You have succeffuly update Profile and Settings Data .
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="" onclick="location.reload();">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                        <br>
-                    </div>
-                    <?php
-
-                }
-                else
-                {
-                        ?>
-                        <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
-                            <span class="badge badge-pill badge-danger">Error</span>
-                            Sorry Something went wrong. Please try again and try to rename the picture you was uploading.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                        </div>
-                        <?php
-                }
+    $sql5="SELECT * from account where id='$agent_id'";
+    $result5=$conn->query($sql5);
+    while ($row5 = $result5->fetch_assoc()) {
+        $current_profile_pic=$row5['profile'];
     }
+
+    if(empty($_FILES['profile']['name'])){
+
+        $sql="UPDATE account set display_name='$username',email='$email',phone='$tel',password='$password',profile='$current_profile_pic' where id='$agent_id'";
+
+            if ($conn->query($sql)===TRUE) 
+            {
+                ?>
+                <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+                    <span class="badge badge-pill badge-success">Done</span> You have succeffuly update Profile and Settings Data .
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="" onclick="location.reload();">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <br>
+                </div>
+                <?php
+
+            }
+            else
+            {
+                ?>
+                    <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+                        <span class="badge badge-pill badge-danger">Error</span>
+                        Sorry Something went wrong. Please try again and try to rename the picture you was uploading.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php
+            }
+
+    }else{
+
+        $profile=$_FILES['profile'];
+        $file_name = $_FILES['profile']['name'];    
+        $file_location = $_FILES['profile']['tmp_name'];
+        $new_file_name = "$file_name";
+
+
+        if(move_uploaded_file($file_location, "../start_up_profile_data/" . $new_file_name)){
+                            
+            $sql="UPDATE account set display_name='$username',email='$email',phone='$tel',password='$password',profile='$new_file_name' where id='$agent_id'";
+
+            if ($conn->query($sql)===TRUE) 
+            {
+                ?>
+                <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+                    <span class="badge badge-pill badge-success">Done</span> You have succeffuly update Profile and Settings Data .
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="" onclick="location.reload();">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <br>
+                </div>
+                <?php
+
+            }
+            else
+            {
+                ?>
+                    <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+                        <span class="badge badge-pill badge-danger">Error</span>
+                        Sorry Something went wrong. Please try again and try to rename the picture you was uploading.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php
+            }
+        }
+
+    }
+    
+    
 }
                         
  ?>
 
-
-
- 
 
 </body>
 </html>

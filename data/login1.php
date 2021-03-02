@@ -75,7 +75,7 @@ session_start();
         <?php
     }else{
 
-    $query=$conn->query("SELECT * from account where username='$username' and password='$password' and category='startup'");
+    $query=$conn->query("SELECT * from account where username='$username' and password='$password' ");
     if($query->num_rows ==1){
 
       $sql4="SELECT * from account where username like '$username'";
@@ -108,7 +108,7 @@ session_start();
           }
           else{
 
-                 $query1=$conn->query("SELECT * from account where username='$username' and password='$password' and category='investor'");
+                 $query1=$conn->query("SELECT * from account where username='$username' and password='$password' ");
                         if($query1->num_rows ==1){
 
                     $sql5="SELECT * from account where username like '$username'";

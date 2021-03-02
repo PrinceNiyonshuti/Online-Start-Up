@@ -1,7 +1,7 @@
-						<div class="row">
-                            <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2019 All rights reserved By Ahisha Driving Vacation | Designed by <a href="https://colorlib.com">NP Tech</a>.</p>
-                                </div>
-                            </div>
-                        </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="copyright">
+            <p>Copyright © <?php  ?> All rights reserved By Online-Start-Up | Designed by <a href="https://princeniyonshuti.github.io./">NP Tech</a>.</p>
+        </div>
+    </div>
+</div>
