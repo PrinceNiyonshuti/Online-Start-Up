@@ -8,36 +8,34 @@ session_start();
 
 // For logout
 
-if(isset($_GET["sign"]))
-{
-    $sign=$_GET["sign"];
-    if($sign=="out")
-    {
+if (isset($_GET["sign"])) {
+    $sign = $_GET["sign"];
+    if ($sign == "out") {
         unset($_SESSION["admin_data_2020"]);
-        
-        header("location:../login.php");}
+
+        header("location:../login.php");
     }
-    
+}
+
 
 // For checking if the user logged in
 
-if(isset($_SESSION['admin_data_2020']) == false){
+if (isset($_SESSION['admin_data_2020']) == false) {
     header("Location:../login.php");
-}else{
-    ?>
+} else {
+?>
 
 
-    <?php
+<?php
 
-        $sql5="SELECT * from admin where username='$_SESSION[admin_data_2020]'";
-        $result5=$conn->query($sql5);
+    $sql5 = "SELECT * from admin where username='$_SESSION[admin_data_2020]'";
+    $result5 = $conn->query($sql5);
 
 
-        while ($row5 = $result5->fetch_assoc()) {
-        $admin_det=$row5['id'];
-        $username=$row5['username'];
-
-        }
+    while ($row5 = $result5->fetch_assoc()) {
+        $admin_det = $row5['id'];
+        $username = $row5['username'];
+    }
 
     ?>
 
@@ -66,7 +64,8 @@ if(isset($_SESSION['admin_data_2020']) == false){
 
     <!-- Vendor CSS-->
     <link href="../assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"
+        media="all">
     <link href="../assets/vendor/wow/animate.css" rel="stylesheet" media="all">
     <link href="../assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
     <link href="../assets/vendor/slick/slick.css" rel="stylesheet" media="all">
@@ -118,8 +117,8 @@ if(isset($_SESSION['admin_data_2020']) == false){
                         <li>
                             <a href="index.php?students">
                                 <i class="fas fa-users"></i>School Students</a>
-                        </li>                     
-                        
+                        </li>
+
                     </ul>
                 </div>
             </nav>
@@ -173,7 +172,7 @@ if(isset($_SESSION['admin_data_2020']) == false){
                             </form>
                             <div class="header-button">
                                 <div class="noti-wrap">
-                                    
+
                                     <!-- <div class="noti__item js-item-menu">
                                         <i class="zmdi zmdi-notifications"></i>
                                         <span class="quantity">3</span>
@@ -217,7 +216,8 @@ if(isset($_SESSION['admin_data_2020']) == false){
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                           <img src="../assets/images/icon/avatar-06.jpg" alt="<?php echo $username ?>" />
+                                            <img src="../assets/images/icon/avatar-06.jpg"
+                                                alt="<?php echo $username ?>" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><?php echo $username ?></a></a>
@@ -226,14 +226,17 @@ if(isset($_SESSION['admin_data_2020']) == false){
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="../assets/images/icon/avatar-06.jpg" alt="<?php echo $username ?>" />
+                                                        <img src="../assets/images/icon/avatar-06.jpg"
+                                                            alt="<?php echo $username ?>" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
                                                         <a href="#"><?php echo $username ?></a></a>
                                                     </h5>
-                                                    <span class="email"><!-- <?php echo $Email ?> --></a></span>
+                                                    <span class="email">
+                                                        <!-- <?php echo $Email ?> --></a>
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
@@ -253,34 +256,27 @@ if(isset($_SESSION['admin_data_2020']) == false){
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
-                    
+
                     <?php
-    if(isset($_GET['home']))
-        {
-            include("home.php");
-        }
+                        if (isset($_GET['home'])) {
+                            include("home.php");
+                        } elseif (isset($_GET['start_up'])) {
+                            include("start_up.php");
+                        } elseif (isset($_GET['projects'])) {
+                            include("projects.php");
+                        } elseif (isset($_GET['meet_request'])) {
+                            include("meet_request.php");
+                        } elseif (isset($_GET['view_details'])) {
+                            include("view_details.php");
+                        } elseif (isset($_GET['read_request'])) {
+                            include("read_request.php");
+                        } elseif (isset($_GET['view_start_up'])) {
+                            include("view_start_up.php");
+                        } else {
+                            include("home.php");
+                        }
 
-        elseif(isset($_GET['start_up']))
-        {           
-            include("start_up.php");
-        }
-
-        elseif(isset($_GET['projects']))
-        {           
-            include("projects.php");
-        }
-
-        elseif(isset($_GET['meet_request']))
-        {           
-            include("meet_request.php");
-        }
-        
-        else
-        {
-            include("home.php");
-        }
-
-        ?> 
+                        ?>
 
                 </div>
             </div>

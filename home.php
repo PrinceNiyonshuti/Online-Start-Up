@@ -5,10 +5,12 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-7 col-md-6">
                         <div class="slider_text">
-                            <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".1s">Get investment and keep growing</h3>
+                            <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".1s">Get investment and
+                                keep growing</h3>
                             <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">
-                                <p style="color: #dadada; font-size: 18px;font-weight: 500;"> We know you have great plans for your startup and we want to help you make them a reality.<br>
-                                 <span style="font-weight: bold;">We invest in your project.</span>
+                                <p style="color: #dadada; font-size: 18px;font-weight: 500;"> We know you have great
+                                    plans for your startup and we want to help you make them a reality.<br>
+                                    <span style="font-weight: bold;">We invest in your project.</span>
                                 </p>
                                 <a href="#" class="boxed-btn3">Why join Startup</a>
                             </div>
@@ -39,61 +41,66 @@
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-90">
                         <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
-                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Grow like the best ones. <strong>Get quality funding.</strong></h3>
-                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Get the funds you need to carry out your business plans. We will help you grow your project!</p>
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Grow like the best ones.
+                            <strong>Get quality funding.</strong></h3>
+                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Get the funds you need to
+                            carry out your business plans. We will help you grow your project!</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <?php
 
-                    $sql5="SELECT * from startup_tbl LIMIT 6 ";
-                    $result5=$conn->query($sql5);
+                $sql5 = "SELECT * from startup_tbl LIMIT 6 ";
+                $result5 = $conn->query($sql5);
 
 
-                    while ($row5 = $result5->fetch_assoc()) {
-                        $start_id=$row5['start_id'];
-                        $start_profile=$row5['start_profile'];
+                while ($row5 = $result5->fetch_assoc()) {
+                    $start_id = $row5['start_id'];
+                    $start_profile = $row5['start_profile'];
 
                 ?>
                 <div class="col-lg-4 col-md-6">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <?php
-                                    if (empty($start_profile)) {
-                                        $fileName = "avatar-06.jpg";
-                                    } else {
-                                        $fileName = "$start_profile";
-                                    }
-                                        
-                                ?>
-                                <img class="card-img rounded-0" style="height:350px;" src="account/start_icon/<?php echo $fileName; ?>" alt="<?php echo $row5['start_name']; ?>" >
-                                <a href="index.php?detail&data=<?php echo $row5['start_id']; ?>" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
+                    <article class="blog_item">
+                        <div class="blog_item_img">
+                            <?php
+                                if (empty($start_profile)) {
+                                    $fileName = "avatar-06.jpg";
+                                } else {
+                                    $fileName = "$start_profile";
+                                }
 
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="index.php?detail&data=<?php echo $row5['start_id']; ?>">
-                                    <h2><?php echo substr($row5['start_name'],0,20); ?>...</h2>
-                                    <ul class="blog-info-link">
-                                        <li><a href="index.php?detail&data=<?php echo $row5['start_id']; ?> "> Invest in <?php echo substr($row5['start_name'],0,30); ?>...</a></li>
-                                    </ul>
-                                </a>
-                                <p> <i class="fa fa-list"></i> <?php echo $row5['start_category']; ?> </p>
-                                <hr>                            
-                            </div>
-                        </article>
+                                ?>
+                            <img class="card-img rounded-0" style="height:350px;"
+                                src="account/start_icon/<?php echo $fileName; ?>"
+                                alt="<?php echo $row5['start_name']; ?>">
+                            <a href="index.php?detail&data=<?php echo $row5['start_id']; ?>" class="blog_item_date">
+                                <h3>15</h3>
+                                <p>Jan</p>
+                            </a>
+                        </div>
+
+                        <div class="blog_details">
+                            <a class="d-inline-block" href="index.php?detail&data=<?php echo $row5['start_id']; ?>">
+                                <h2><?php echo substr($row5['start_name'], 0, 20); ?>...</h2>
+                                <ul class="blog-info-link">
+                                    <li><a href="index.php?detail&data=<?php echo $row5['start_id']; ?> "> Invest in
+                                            <?php echo substr($row5['start_name'], 0, 30); ?>...</a></li>
+                                </ul>
+                            </a>
+                            <p> <i class="fa fa-list"></i> <?php echo $row5['start_category']; ?> </p>
+                            <hr>
+                        </div>
+                    </article>
                 </div>
                 <?php
-                    }
+                }
                 ?>
-                
+
                 <div class="col-lg-12">
                     <center>
                         <p>These are the latest opportunities launched in Startupxplore. But there are many more!</p>
-                        <a href="index.php?start_up" class="boxed-btn3" >See all Start Up Projects launched</a>                   
+                        <a href="index.php?start_up" class="boxed-btn3">See all Start Up Projects launched</a>
                     </center>
                 </div>
             </div>
@@ -108,8 +115,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-90">
-                        
-                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">What do you get by <strong>registering on Startupxplore?</strong></h3>
+
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">What do you get by
+                            <strong>registering on Startupxplore?</strong></h3>
                         <span class="wow lightSpeedIn" data-wow-duration="1s" data-wow-delay=".1s"></span>
                     </div>
                 </div>
@@ -118,10 +126,11 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="single_works wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                         <span style="font-size: 45px;text-align: center;">
-                           <i class="fa fa-eye" ></i>
+                            <i class="fa fa-eye"></i>
                         </span>
                         <h3>Visibilty</h3>
-                        <p>Get potential investors and media to know you. They can find you by sector, location or stage.</p>
+                        <p>Get potential investors and media to know you. They can find you by sector, location or
+                            stage.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
@@ -130,22 +139,24 @@
                             <i class="fa fa-file"></i>
                         </span>
                         <h3>Transparency</h3>
-                        <p>Find out what happens in the entrepreneurial ecosystem. Our mission is to bring transparency to the sector.</p>
+                        <p>Find out what happens in the entrepreneurial ecosystem. Our mission is to bring transparency
+                            to the sector.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="single_works wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                         <span style="font-size: 45px;text-align: center;">
-                            <i class="fa fa-wifi" ></i>
+                            <i class="fa fa-wifi"></i>
                         </span>
                         <h3>Networking</h3>
-                        <p>Find suppliers, accelerators and coworkings near you. Meet investors who will bring you their vision.</p>
+                        <p>Find suppliers, accelerators and coworkings near you. Meet investors who will bring you their
+                            vision.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- about_area_start  -->
     <div class="about_area">
         <div class="container">
@@ -161,7 +172,8 @@
                             <h3>Gain visibility.</h3>
                             <span class="wow lightSpeedIn" data-wow-duration="1s" data-wow-delay=".1s"></span>
                         </div>
-                        <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">Join the largest startup community! 17,254 companies are already inside.</p>
+                        <p class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">Join the largest startup
+                            community! 17,254 companies are already inside.</p>
                         <div class="about_list">
                             <ul>
                                 <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
@@ -195,7 +207,11 @@
                         <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
                             <strong>Finance your company</strong> through Startupxplore.
                         </h3>
-                        <p>In addition to being a great community, Startupxplore is premium investment platform where high potential startups can start their round. The opportunities that Startupxplore publishes (and where it spends) are operations where a professional investor with experience and proven record of investment in startups has already confirmed his participation and invests his money.</p>
+                        <p>In addition to being a great community, Startupxplore is premium investment platform where
+                            high potential startups can start their round. The opportunities that Startupxplore
+                            publishes (and where it spends) are operations where a professional investor with experience
+                            and proven record of investment in startups has already confirmed his participation and
+                            invests his money.</p>
 
                         <div class="button">
                             <div class="row">
@@ -206,7 +222,8 @@
                                 <div class="col-md-9 col-sm-9 col-xs-9">
                                     <h4>Better conditions</h4>
 
-                                    <p>Access to venture capital size rounds, but with the terms and conditions of a round with business angels.</p>
+                                    <p>Access to venture capital size rounds, but with the terms and conditions of a
+                                        round with business angels.</p>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +237,8 @@
                                 <div class="col-md-9 col-sm-9 col-xs-9">
                                     <h4>We walk the way with you</h4>
 
-                                    <p>We help you explain your business and prepare the documentation for the investor. We work with you to make your business successful.</p>
+                                    <p>We help you explain your business and prepare the documentation for the investor.
+                                        We work with you to make your business successful.</p>
                                 </div>
                             </div>
                         </div>
@@ -230,81 +248,3 @@
             </div>
         </div>
     </div>
-
-    <!-- testimonial_area  -->
-    <div class="works_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="section_title text-center mb-90">
-                        <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                            Featured <strong>Startups</strong></h4>
-                        <span class="wow lightSpeedIn" data-wow-duration="1s" data-wow-delay=".1s"></span>
-                        <div class="content-list">
-                            <div class="image">
-                                <img src="img/post/post_1.png" alt="post">
-                            </div>
-                            <div class="content">
-                                <h4 style="text-align: left;"> Neki <br>
-                                       <p style="font-size: 15px;color:#33D4D6;">Hardware</p> 
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-90">
-                        <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                           Featured <strong>Investors</strong></h4>
-                        <span class="wow lightSpeedIn" data-wow-duration="1s" data-wow-delay=".1s"></span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- /testimonial_area  -->
-
-    <!-- <div class="brad_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="brad_active owl-carousel">
-                        <div class="single_brand wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                            <img src="img/brand/1.png" alt="">
-                        </div>
-                        <div class="single_brand wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                            <img src="img/brand/2.png" alt="">
-                        </div>
-                        <div class="single_brand wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                            <img src="img/brand/3.png" alt="">
-                        </div>
-                        <div class="single_brand wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                            <img src="img/brand/4.png" alt="">
-                        </div>
-                        <div class="single_brand wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                            <img src="img/brand/5.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-<!--     <div class="apply_loan overlay">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 col-md-7">
-                    <div class="loan_text wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                        <h3>Apply for a Loan for your startup, 
-                            education or company</h3>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-5">
-                    <div class="loan_btn wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".4s">
-                        <a class="boxed-btn3" href="apply.html">Apply Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
